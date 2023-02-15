@@ -4,6 +4,7 @@ A simple API endpoint that anwsers your prompt using OpenAI's GPT-3
 
 ## Prerequisites
 
+- The `serverless` CLI installed.
 - You need to create an API key from OpenAI and set it as the value of `OPENAI_API_TOKEN` environment variable.
 - You need to set up credentials for AWS. Follow [this tutorial](https://www.serverless.com/framework/docs/providers/aws/guide/credentials/) to know how to configure it.
   
