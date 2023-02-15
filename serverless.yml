@@ -1,0 +1,26 @@
+service: chat-gpt
+
+frameworkVersion: ^3.27.0
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: dev
+  region: eu-north-1
+  httpApi:
+    cors: true
+
+package:
+  patterns:
+    - '!./**'
+    - ./bin/**
+
+functions:
+  ask:
+    handler: bin/ask
+    events:
+      - httpApi:
+          path: /ask
+          method: post
+    environment:
+      OPENAI_API_KEY: ${env:OPENAI_API_KEY}
